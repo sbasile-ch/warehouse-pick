@@ -8,6 +8,12 @@ export default class Utils {
    static END    = "\x1b[0m";
    static NO_COL = '';
 
+   // strip color formatting from a string
+   static stripFormat (str) {
+      return str.replace(/\x1b\[[0-9;]*[a-zA-Z]/g,'');
+   }
+
+   // custom lexical sort (i.e. B comes first than AB) on an input array
    static sortArrayLexical(a, b) {
       let k1 = a[0];
       let k2 = b[0]
@@ -20,6 +26,7 @@ export default class Utils {
       }
    }
 
+   // default numeric sort on an input array
    static sortArrayNumeric(strA, strB) {
       return parseInt(strA[0]) - parseInt(strB[0]);
    }

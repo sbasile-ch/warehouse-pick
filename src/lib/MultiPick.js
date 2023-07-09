@@ -7,17 +7,19 @@ const VAL = 1
 
 export default class MultiPick extends MapLists {
 
+   // add nested structure bay -> shelf -> [product, quantity]
    loadPick(pick) {
       this.add(pick.bay).
       add(pick.shelf).
       addItem(pick.prodCode, pick.quantity);
    }
 
-   print(str)   { console.log(str) }
-   
-   out(colOn = true, headerOn = true) {
+   // define where to dump
+   print(str) { console.log(str) }
+
+   // dump the whole nested structure
+   out(headerOn = true) {
       let colH = Utils.PURPLE, colCSV = Utils.GREEN, colEND = Utils.END;
-      if (!colOn) { colH = colCSV = colEND = Utils.NO_COL }
       if (headerOn) { this.print(`${colH}${Utils.HEADER}${colEND}`) }
       this.keysValues(Utils.sortCustomLexical).forEach(bay => {
          bay[VAL].keysValues(Utils.sortArrayNumeric).forEach(shelf => {

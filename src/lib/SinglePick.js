@@ -2,6 +2,7 @@ import InvalidPickException from './InvalidPickException.js';
 
 export default class SinglePick {
 
+   // define the regex to validate any CSV pick
    //               pcode | qua. |   bay      | shelf
    static regex = '^(\\d+),(\\d+),([A-Z]|A[A-Z])(10|[1-9])';
 
@@ -12,10 +13,8 @@ export default class SinglePick {
       this.shelf    = shelf;
    }
 
+   // class factory. Return a new SinglePick if CSV palyoad is valid
    static createSinglePick(line) {
-      let err_msg;
-      // //             pcode | qua. |   bay      | shelf
-      // let regex = '^(\\d+),(\\d+),([A-Z]|A[A-Z])(10|[1-9])';
       try {
          line = line.replace(/\s+/g, '');  // we don't want/need any space
          if (line !== "")
