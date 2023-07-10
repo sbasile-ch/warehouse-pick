@@ -14,6 +14,7 @@ async function run() {
    let multiP = new MultiPick();
    rl.on('line', l => {
       try {
+         l = Utils.stripFormat(l);
          if (l !== Utils.HEADER) {
             let pick = SinglePick.createSinglePick(l);
             if (pick !== null) {

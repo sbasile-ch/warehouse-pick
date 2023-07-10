@@ -1,0 +1,26 @@
+{
+  "name": "warehouse-pick",
+  "description": "This is my coding implementation.",
+  "version": "1.0.0",
+  "main": "run.js",
+  "engines": {
+    "node": ">=16.15.1"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "transform": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sbasile-ch/warehouse-pick.git"
+  },
+  "author": "sbasile",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sbasile-ch/warehouse-pick/issues"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}
